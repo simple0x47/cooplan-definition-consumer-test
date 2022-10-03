@@ -6,3 +6,23 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+cooplan-definitions-lib = "0.1.4"
+cooplan-definitions-io-lib = "0.1.5"
+
+git2 = "0.15.0"
+
+serde = { version = "1.0.141", features = ["derive"] }
+serde_json = "1.0.82"
+
+log = "0.4.17"
+simple_logger = "2.3.0"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# AMQP
+lapin = "2.1"
+
+tokio-executor-trait = "2.1"
+tokio-reactor-trait = "1.1"
