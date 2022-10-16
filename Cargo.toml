@@ -7,10 +7,9 @@ edition = "2021"
 
 [dependencies]
 
-cooplan-definitions-lib = "0.1.4"
-cooplan-definitions-io-lib = "0.1.5"
-
-git2 = "0.15.0"
+cooplan-definitions-lib = "0.1.6"
+cooplan-definitions-io-lib = "0.1.7"
+cooplan-definition-git-downloader = "0.1.1"
 
 serde = { version = "1.0.141", features = ["derive"] }
 serde_json = "1.0.82"
@@ -22,6 +21,7 @@ simple_logger = "2.3.0"
 tokio = { version = "1", features = ["full"] }
 
 # AMQP
+futures-util = "0.3.24"
 lapin = "2.1"
 
 tokio-executor-trait = "2.1"

@@ -1,0 +1,8 @@
+{
+    "git": {
+        "repository_url": "https://github.com/simple0x47/cooplan-definitions.git",
+        "repository_local_dir": "categories",
+        "remote_name": "origin",
+        "remote_branch": "main"
+    }
+}
