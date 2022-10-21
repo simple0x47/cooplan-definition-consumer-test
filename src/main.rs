@@ -22,10 +22,15 @@ async fn main() -> Result<(), Error> {
         }
     }
 
-    let mut input = RabbitMQInput::new(
-        "amqp://guest:guest@127.0.0.1:5672".to_string(),
-        "definition-provider-output".to_string(),
-    );
+    let connection_uri = match std::env::var("AMQP_CONNECTION_URI") {
+        Ok(connection_uri) => connection_uri,
+        Err(error) => {
+            return Err(Error::new(
+                ErrorKind::InvalidData,
+                format!("failed to retrieve connection uri: {}", error),
+            ))
+        }
+    };
 
     let config = match crate::config::config_reader_builder::default().read() {
         Ok(config) => config,
@@ -33,6 +38,8 @@ async fn main() -> Result<(), Error> {
             return Err(error);
         }
     };
+
+    let mut input = RabbitMQInput::new(connection_uri, config.amqp_channel_name());
 
     match input.connect().await {
         Ok(_) => loop {

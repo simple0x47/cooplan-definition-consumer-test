@@ -4,5 +4,6 @@
         "repository_local_dir": "categories",
         "remote_name": "origin",
         "remote_branch": "main"
-    }
+    },
+    "amqp_channel_name": "definition-provider-output"
 }
