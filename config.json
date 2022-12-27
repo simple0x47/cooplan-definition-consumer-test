@@ -5,5 +5,5 @@
         "remote_name": "origin",
         "remote_branch": "main"
     },
-    "amqp_channel_name": "definition-provider-output"
+    "amqp_channel_name": "latest_definition"
 }
